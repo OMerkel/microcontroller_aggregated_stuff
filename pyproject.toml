@@ -1,0 +1,15 @@
+[project]
+name = "microcontroller_aggregated_stuff"
+version = "0.1.0"
+description = "Some microcontroller related stuff based on MicroPython"
+authors = [
+    {name = "Oliver Merkel", email = "Merkel.Oliver@web.de"},
+]
+dependencies = ["thonny>=4.1.7"]
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
