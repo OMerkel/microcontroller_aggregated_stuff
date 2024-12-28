@@ -26,4 +26,4 @@ pdm run thonny
 
 # Links
 
-* https://wokwi.com/ In case you plan to emulate the RaspberryPi then wokwi might come in handy.
+* https://wokwi.com/ In case you plan to emulate the RaspberryPi Pico then wokwi might come in handy.
