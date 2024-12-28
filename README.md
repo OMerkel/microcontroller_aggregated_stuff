@@ -8,7 +8,7 @@ Assuming you have a recent Python installed:
 
 ```
 python -m venv venv
-venv\Scripts\activate
+venv/Scripts/activate
 pip install -r requirements.txt
 pdm update
 pdm run thonny
