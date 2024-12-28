@@ -23,3 +23,7 @@ pdm run thonny
     * Song files need to be transferred to your Pico, too, such that these can be imported.
 * Starting jukebox/main.py obviously starts playing the song files
 * Enjoy...
+
+# Links
+
+* https://wokwi.com/ In case you plan to emulate the RaspberryPi then wokwi might come in handy.
