@@ -7,9 +7,11 @@ Hosting some microcontroller related stuff
 Assuming you have a recent Python installed:
 
 ```
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
 pdm update
-thonny
+pdm run thonny
 ```
 
     * This should open the Thonny IDE.
