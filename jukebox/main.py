@@ -11,6 +11,7 @@
 
 from jukebox import main
 import alle_jahre_wieder
+import auld_lang_syne
 import der_kuckuck_und_der_esel
 import die_gedanken_sind_frei
 import froh_und_munter
@@ -20,6 +21,7 @@ import morgen_kinder_wirds_was_geben as mk
 import silent_night
 
 while True:
+    main(song=auld_lang_syne.song, verses=3, speed=0.1)
     main(song=der_kuckuck_und_der_esel.song, verses=3, speed=0.1)
     main(song=die_gedanken_sind_frei.song, verses=4, speed=0.15)
     main(song=kling_gloeckchen_kling.song, verses=3)
