@@ -31,8 +31,8 @@ lookup_duration = [ "_", "1/16", "1/8", "3/16", "1/4", "5/16", "3/8", "7/16", "1
 
 scale = {
     "title": "Scale",
-    "score": [('c', '1/4'), ('d', '1/4'), ('e', '1/4'), ('f', '1/4'),
-         ('g', '1/4'), ('a', '1/4'), ('b', '1/4'), ('C', '1/4')]
+    "score": [('c4', '1/4'), ('d4', '1/4'), ('e4', '1/4'), ('f4', '1/4'),
+         ('g4', '1/4'), ('a4', '1/4'), ('b4', '1/4'), ('c5', '1/4')]
 }
 
 
@@ -52,11 +52,9 @@ def length_to_duration(length):
 
 def main(song=scale, speed=0.2, continue_playing=False, verses=1):
     speaker = setup()
-    frequency_mapping = {
-        "c": 261, "c#": 277, "d": 293, "e": 329, "f": 349, "f#": 369,
-        "g": 392, "g#": 415, "a": 440, "a#": 466, "b": 493,
-        "C": 523, "C#": 554, "D": 587, "E": 659, "F": 698, "F#": 739,
-        "G": 783, "G#": 830, "A": 880, "A#": 932, "B": 987
+    midi_mapping = {
+        "c": 0, "c#": 1, "d": 2, "d#": 3, "e": 4, "f": 5, "f#": 6,
+        "g": 7, "g#": 8, "a": 9, "a#": 10, "b": 11,
     }
     title = song["title"]
     print(f"Playing {title}...")
@@ -65,9 +63,10 @@ def main(song=scale, speed=0.2, continue_playing=False, verses=1):
             print(f"Verse #{verse+1}")
             for note, length in song["score"]:
                 d = length_to_duration(length)
-                print(note, length, d, end=", ")
+                print(note, length, d, end=", "),
                 if note != "-":
-                    freq_hz = frequency_mapping[note]
+                    midi_note = midi_mapping[note[:-1]] + (1+int(note[-1]))*12
+                    freq_hz = int(440*(2**(1/12))**(midi_note-69))
                     speaker.freq(freq_hz)
                     speaker.duty_u16(1000)
                 sleep(0.9 * speed * d)
