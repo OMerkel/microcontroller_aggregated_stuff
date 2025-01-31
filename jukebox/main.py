@@ -18,9 +18,11 @@ import froh_und_munter
 import kling_gloeckchen_kling
 import leise_rieselt_der_schnee
 import morgen_kinder_wirds_was_geben as mk
+import passacaglia
 import silent_night
 
 while True:
+    main(song=passacaglia.song, verses=1, speed=0.14)
     main(song=auld_lang_syne.song, verses=3, speed=0.1)
     main(song=der_kuckuck_und_der_esel.song, verses=3, speed=0.1)
     main(song=die_gedanken_sind_frei.song, verses=4, speed=0.15)
